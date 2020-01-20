@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="padre">
+      Ingresar
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  >
+  <ion-grid fixed>
+    <ion-row text-center>
+      <ion-col  ion-item no-lines no-padding text-center>
+        <ion-card class="welcome-card"  >
+          <ion-card-header>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-card-subtitle>Comenzemos</ion-card-subtitle>
+                  <ion-card-title>Bienvenido a ChauchApp</ion-card-title>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-header>
+          <ion-card-content>
+            <p> Puedes ingresar con Facebook O Gmail</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col >
+      <ion-col size="12" ion-item no-lines no-padding text-center >
+        <ion-list>
+          <ion-item class="padre">
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col>
+                  <form method="POST" novalidate="">
+                    <div>
+                      <h1 class="center">Ingresar</h1>
+                      <div class="_1fR85"><label class="_1l5ZK" >
+                          <div class="_2uEdv">
+                            <input data-test="email-input" placeholder="Correo o usuario" type="text"
+                              class="pbbEi _3V3W8  _3LmPy" value="">
+                          </div>
+                        </label><label class="_1l5ZK">
+                          <div class="_2uEdv"><input data-test="password-input" placeholder="Contraseña" type="password"
+                              class="pbbEi _3V3W8 _3pUYV _3LmPy" value=""></div>
+                        </label></div><button data-test="register-button"
+                        class="RqOOF _2ESN4 _2arQ0 _2vmUZ _2Zh2S _1X3l0 eJd0I _3yrdh _2wXoR _1AM95 _1dlWz _2gnHr"
+                        type="submit">Ingresar</button>
+                      <hr class="_1VVuF">
+                      <p class="mQ2KL"><button  (click)="IniciarSesionfacebook()"
+                          class="wScwL oNqWF _3hso2 _2vmUZ _2Zh2S _1X3l0 eJd0I _3yrdh _2wXoR _1AM95 _2PUh7 H7AnT DJd0l"
+                          type="button"><img class="O5u5v"
+                            src="//d35aaqx5ub95lt.cloudfront.net/images/facebook-blue.svg"><span>Facebook</span></button><button
+                          class="_3CeNn oNqWF _3hso2 _2vmUZ _2Zh2S _1X3l0 eJd0I _3yrdh _2wXoR _1AM95 _2PUh7 H7AnT DJd0l"
+                          type="button"><img class="O5u5v"
+                            src="//d35aaqx5ub95lt.cloudfront.net/images/google-color.svg"><span>Gmail</span></button></p>
+                    </div>
+                    <div class="_1T7ju">
+                      <div><span>Al registrarte en ChauchApp, aceptas nuestros <a href=""><b>Términos</b></a> y <a
+                            href=""><b>Política de privacidad</b></a>.</span></div> 
+                    </div>
+                  </form>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  
+ </ion-content>

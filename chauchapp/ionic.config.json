@@ -1,0 +1,7 @@
+{
+  "name": "chauchapp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
