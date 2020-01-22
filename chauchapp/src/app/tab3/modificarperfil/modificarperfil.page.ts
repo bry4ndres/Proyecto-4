@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
 import { PerfilService } from '../../servicios/perfil.service';
 
 @Component({
@@ -9,8 +9,9 @@ import { PerfilService } from '../../servicios/perfil.service';
 })
 export class ModificarperfilPage implements OnInit {
   notes = {id: null, title: null, description: null};
-  constructor( public router: Router, public perfilService: PerfilService) {
-    this.notes = this.perfilService.getNote('c');
+  id = null;
+  constructor( public router: Router, public perfilService: PerfilService, private activatedRoute: ActivatedRoute) {
+   
    }
 
   ngOnInit() {

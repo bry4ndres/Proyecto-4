@@ -19,11 +19,8 @@ export class PerfilService {
   constructor( private ab: AngularFirestore, public afDB: AngularFireDatabase) { }
   perfiles = [];
   notes = [
-    { id: 'a', title: 'Nota1', description: 'Descripcion1'},
-     { id: 'b', title: 'Nota2', description: 'Descripcion2'},
-     { id: 'c', title: 'Nota3', description: 'Descripcion3'}
   ];
-  /*
+  
   getPerfil() {
     return this.ab.collection('Datos').snapshotChanges();
   }
@@ -31,16 +28,17 @@ export class PerfilService {
   public getProfile() {
    // return this.afDB.list('Empleados/');
     return this.afDB.list('Usuarios/').snapshotChanges().pipe(map(info => {
-      return info.map(a => {
+       info.map(a => {
         const data: perfiles = a.payload.toJSON() as perfiles;
-        data.id = a.payload.toJSON().toString();
+        console.log(data.displayName);
         return data;
       })
     }));
-  }*/
+  }
 
   public getNotes() {
-    return this.notes;
+    //return this.notes;z
+    return this.afDB.list('Empleados/').snapshotChanges();
   }
 
   public getNote(id) {

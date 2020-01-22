@@ -16,6 +16,13 @@ const routes: Routes = [
   {
     path: 'modificarperfil',
     loadChildren: () => import('./tab3/modificarperfil/modificarperfil.module').then( m => m.ModificarperfilPageModule)
+  },
+  {
+    path: 'details/:id',
+    loadChildren: () => import('./pages/todo-details/todo-details.module').then( m => m.TodoDetailsPageModule)
+  },
+  {
+    path: 'details', loadChildren: () => import('./pages/todo-details/todo-details.module').then( m => m.TodoDetailsPageModule)
   }
 ];
 @NgModule({

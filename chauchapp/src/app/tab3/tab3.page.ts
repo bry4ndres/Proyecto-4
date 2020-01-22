@@ -18,18 +18,17 @@ export class Tab3Page implements OnInit {
   public infoPerfil: any = [];
   notes = {id: null, title: null, description: null};
   constructor(public authService: AuthService, public perfilService: PerfilService, public router: Router) {
-
   }
 
-    public irModificar() {
-    this.router.navigate(['/modificarperfil']);
+    public irModificar(id) {
+    this.router.navigate(['/modificarperfil', {id} ]);
   }
   LogOut() {
     this.authService.logout();
   }
 ngOnInit() {
-  this.notes = this.perfilService.getNote(this.authService.userId);
- /* this.perfilService.getPerfil().subscribe(perfil => {
+  // this.notes = this.perfilService.getNote(this.authService.userId);
+ /*this.perfilService.getPerfil().subscribe(perfil => {
     perfil.map( perfiles => {
       const data: perfiles = perfiles.payload.doc.data() as perfiles;
       data.id = perfiles.payload.doc.id;
@@ -37,10 +36,11 @@ ngOnInit() {
     });
    });*/
 
-   /*this.perfilService.getProfile().subscribe(perfil => {
+   this.perfilService.getProfile().subscribe(perfil => {
      // tslint:disable-next-line: no-shadowed-variable
        this.infoPerfil = perfil;
-   });*/
+       
+         });
 
   }
 }
