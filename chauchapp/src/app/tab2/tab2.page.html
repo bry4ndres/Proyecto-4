@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>
-      Ionic Crud-Todos
+      Servicios
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -16,11 +16,11 @@
       </div>
     </ng-container>
     <ion-item-sliding *ngFor="let todo of todos">
-      <ion-item lines="inset" button [routerLink]="['/details', todo.id]">
-        <ion-label>
-          {{ todo.task }}
+      <ion-item *ngIf="todo.idusuario==cod " lines="inset" button [routerLink]="['/details', todo.id]">
+        <ion-label >
+          {{'- '}}
+          {{ todo.nombre }}
         </ion-label>
-        <ion-note slot="end" color="primary">{{ todo.priority }}</ion-note>
       </ion-item>
  
       <ion-item-options side="end">

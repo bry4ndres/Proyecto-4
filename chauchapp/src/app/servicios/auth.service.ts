@@ -45,9 +45,11 @@ if (!auth) {
     if (this.platform.is('cordova')) {
       console.log('PLateforme cordova');
       this.facebookCordova();
+      
     } else {
       console.log('PLateforme Web');
       this.facebookWeb();
+      
     }
 }
 
@@ -94,4 +96,7 @@ logout() {
   this.conectado = false;
 }
 
+infoUser(){
+  return this.userId;
+}
 }

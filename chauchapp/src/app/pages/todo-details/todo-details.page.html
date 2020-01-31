@@ -9,10 +9,16 @@
 <ion-content padding>
   <ion-list lines="full">
     <ion-item *ngIf="todo">
-      <ion-input required type="text" placeholder="Task" [(ngModel)]="todo.task"></ion-input>
+      <ion-input required type="text" placeholder="Nombre de la actividad" [(ngModel)]="todo.nombre"></ion-input>
     </ion-item>
     <ion-item *ngIf="todo">
-      <ion-input required type="number" placeholder="Priority" [(ngModel)]="todo.priority"></ion-input>
+      <ion-input required type="text" placeholder="Descríbelo" [(ngModel)]="todo.descripcion"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="todo">
+      <ion-input required type="text" placeholder="Tu disponibilidad" [(ngModel)]="todo.disponibilidad"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="todo">
+      <ion-input required type="text" placeholder="Telefono" [(ngModel)]="todo.telefono"></ion-input>
     </ion-item>
   </ion-list>
   <ion-button expand="full" (click)="saveTodo()">Save</ion-button>

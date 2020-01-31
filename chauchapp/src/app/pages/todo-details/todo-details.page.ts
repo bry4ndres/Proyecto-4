@@ -3,7 +3,7 @@ import { TaskI} from '../../models/task.interface';
 import { TodoService } from '../../services/todo.service';
 import { ActivatedRoute} from '@angular/router';
 import { NavController, LoadingController } from '@ionic/angular';
-
+import { AuthService } from '../../servicios/auth.service';
 
 @Component({
   selector: 'app-todo-details',
@@ -11,16 +11,18 @@ import { NavController, LoadingController } from '@ionic/angular';
   styleUrls: ['./todo-details.page.scss'],
 })
 export class TodoDetailsPage implements OnInit {
-  
   todo: TaskI = {
-    task: '',
-    priority: 0
+    nombre: '',
+    descripcion: '',
+    disponibilidad: '',
+    telefono: '',
+    idusuario:''
+    /* priority: 0 */
   };
 
   todoId= null;
-
-  constructor(private route: ActivatedRoute, private nav: NavController, private todoService: TodoService, private loadingController: LoadingController) { }
-
+  
+  constructor(private route: ActivatedRoute, private nav: NavController, private todoService: TodoService, private loadingController: LoadingController, private au:AuthService) { }
   ngOnInit() {
     this.todoId = this.route.snapshot.params['id'];
     if (this.todoId){
@@ -41,6 +43,7 @@ export class TodoDetailsPage implements OnInit {
   }
 
   async saveTodo() {
+    this.todo.idusuario=this.au.userId;
     const loading = await this.loadingController.create({
       message: 'Saving....'
     });

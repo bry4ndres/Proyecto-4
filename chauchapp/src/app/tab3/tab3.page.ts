@@ -25,6 +25,7 @@ export class Tab3Page implements OnInit {
   }
   LogOut() {
     this.authService.logout();
+    location.reload();
   }
 ngOnInit() {
   // this.notes = this.perfilService.getNote(this.authService.userId);
