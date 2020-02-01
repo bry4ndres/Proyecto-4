@@ -6,46 +6,30 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Bryan Gagñay</ion-card-subtitle>
-      <ion-card-title>Cocinero</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-        Puede ayudarte con la preparación de diferentes platos 
-    </ion-card-content>
-    <ion-card>
-        <ion-item>
-          <ion-icon name="pin" slot="start"></ion-icon>
-          <ion-label>Riobamba-Yaruquies</ion-label>
-          <ion-button fill="outline" slot="end">View</ion-button>
-        </ion-item>
-      
-        <ion-card-content>
-          Actividades que puede realizar:
-        </ion-card-content>
-        <ion-card>
-            <ion-item href="#" class="activated">
-              <ion-icon name="wine" slot="start"></ion-icon>
-              <ion-label>Preparar Platos Gurmet</ion-label>
-            </ion-item>
-          
-            <ion-item href="#">
-              <ion-icon name="wine" slot="start"></ion-icon>
-              <ion-label>Preparar Platos tradicionales</ion-label>
-            </ion-item>
-          
-            <ion-item class="activated">
-              <ion-icon name="wine" slot="start"></ion-icon>
-              <ion-label>Preparación de bebidas</ion-label>
-            </ion-item>
-          
-            <ion-item>
-              <ion-icon name="walk" slot="start"></ion-icon>
-              <ion-label>Disponibilidad en toda la ciudad</ion-label>
-            </ion-item>
-          </ion-card>    
-      </ion-card>
-  </ion-card>
-</ion-content>
+  <ion-list>
+    <ng-container *ngIf="!servicios || servicios.length == 0">
+      <div *ngFor="let n of [0,1,2]" padding>
+        <ion-skeleton-text></ion-skeleton-text>
+        <p>
+          <ion-skeleton-text class="text-skeleton"></ion-skeleton-text>
+        </p>
+      </div>
+    </ng-container>
+    <ion-item-sliding *ngFor="let servicio of servicios">
+      <ion-item  lines="inset" button [routerLink]="['/detalle', servicio.id]">
+        <ion-label >
+          {{'- '}}
+          {{ servicio.nombre }}
+        </ion-label>
+      </ion-item>
+ 
+      <ion-item-options side="end">
+        <ion-item-option (click)="Remove(item)" color="secondary">
+          Check
+          <ion-icon name="checkmark" slot="end"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+ 
+ </ion-content>

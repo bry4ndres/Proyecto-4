@@ -18,7 +18,7 @@
       <ion-input required type="text" placeholder="Tu disponibilidad" [(ngModel)]="todo.disponibilidad"></ion-input>
     </ion-item>
     <ion-item *ngIf="todo">
-      <ion-input required type="text" placeholder="Telefono" [(ngModel)]="todo.telefono"></ion-input>
+      <ion-input required type="number" placeholder="Telefono" [(ngModel)]="todo.telefono"></ion-input>
     </ion-item>
   </ion-list>
   <ion-button expand="full" (click)="saveTodo()">Save</ion-button>

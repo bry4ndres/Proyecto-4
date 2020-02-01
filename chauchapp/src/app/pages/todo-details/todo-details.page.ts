@@ -52,12 +52,12 @@ export class TodoDetailsPage implements OnInit {
     if (this.todoId) {
       this.todoService.updateTodo(this.todo, this.todoId).then(() => {
         loading.dismiss();
-        this.nav.navigateForward('/');
+        this.nav.navigateForward('/tabs/tab2');
       });
     } else {
       this.todoService.addTodo(this.todo).then(() => {
         loading.dismiss();
-        this.nav.navigateForward('/');
+        this.nav.navigateForward('/tabs/tab2');
       });
     }
   }

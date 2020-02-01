@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalles Servicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-list lines="full">
+    <ion-item *ngIf="servicio">
+      <ion-input required type="text" placeholder="Nombre de la actividad" [(ngModel)]="servicio.nombre"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="servicio">
+      <ion-input required type="text" placeholder="Descríbelo" [(ngModel)]="servicio.descripcion"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="servicio">
+      <ion-input required type="text" placeholder="Tu disponibilidad" [(ngModel)]="servicio.disponibilidad"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="servicio">
+      <ion-input required type="text" placeholder="Telefono" [(ngModel)]="servicio.telefono"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed" color="success">
+      <ion-fab-button color="success" (click)="onRemoveTodo(todoId)" routerLink="/tabs/tab1" routerDirection="forward">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+      </ion-fab-button>
+  </ion-fab>
+</ion-content>

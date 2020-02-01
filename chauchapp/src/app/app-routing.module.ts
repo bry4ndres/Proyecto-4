@@ -23,7 +23,15 @@ const routes: Routes = [
   },
   {
     path: 'details', loadChildren: () => import('./pages/todo-details/todo-details.module').then( m => m.TodoDetailsPageModule)
+  },
+  {
+    path: 'detalle/:id',
+    loadChildren: () => import('./pages/servicio-detalle/servicio-detalle.module').then( m => m.ServicioDetallePageModule)
+  },
+  {
+    path: 'detalle', loadChildren: () => import('./pages/servicio-detalle/servicio-detalle.module').then( m => m.ServicioDetallePageModule)
   }
+
 ];
 @NgModule({
   imports: [
