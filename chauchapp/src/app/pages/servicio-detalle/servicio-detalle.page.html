@@ -6,23 +6,39 @@
     <ion-title>Detalles Servicio</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content padding>
-  <ion-list lines="full">
-    <ion-item *ngIf="servicio">
-      <ion-input required type="text" placeholder="Nombre de la actividad" [(ngModel)]="servicio.nombre"></ion-input>
-    </ion-item>
-    <ion-item *ngIf="servicio">
-      <ion-input required type="text" placeholder="Descríbelo" [(ngModel)]="servicio.descripcion"></ion-input>
-    </ion-item>
-    <ion-item *ngIf="servicio">
-      <ion-input required type="text" placeholder="Tu disponibilidad" [(ngModel)]="servicio.disponibilidad"></ion-input>
-    </ion-item>
-    <ion-item *ngIf="servicio">
-      <ion-input required type="text" placeholder="Telefono" [(ngModel)]="servicio.telefono"></ion-input>
-    </ion-item>
-  </ion-list>
+<ion-content padding >
+  <ion-card *ngIf="servicio" color="light">
+    <ion-card-header>
+      <ion-card-subtitle>Bryan Gagñay</ion-card-subtitle>
+      <ion-card-title text-center ><h1><b>{{servicio.nombre}} </b> </h1></ion-card-title>
+    </ion-card-header>
+    <ion-card-content >
+      <h1 ><b>Descripción:</b> </h1>
+      <ion-avatar class="avatar" slot="end" >
+        <img style="align-items: center" src="https://image.flaticon.com/icons/png/512/236/236835.png">
+      </ion-avatar>
+      <h2 text-center>{{servicio.descripcion}}</h2>
+      
+  </ion-card-content>
+  <ion-card-content>
+    <h1><b>Disponibilidad:</b> </h1>
+    <ion-avatar class="avatar" slot="end" >
+      <img style="align-items: center" src="https://pngimage.net/wp-content/uploads/2018/06/time-in-png-4.png">
+    </ion-avatar>
+    <h2 text-center>{{servicio.disponibilidad}}</h2>
+    
+  </ion-card-content>
+  <ion-card-content>
+    <h1><b>Contacto:</b> </h1>
+    <ion-avatar class="avatar" slot="end" >
+      <img style="align-items: center" src="https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg">
+    </ion-avatar>
+    <h2 text-center>{{servicio.telefono}}</h2>
+  </ion-card-content>
+  </ion-card>
+  
   <ion-fab vertical="bottom" horizontal="center" slot="fixed" color="success">
-      <ion-fab-button color="success" (click)="onRemoveTodo(todoId)" routerLink="/tabs/tab1" routerDirection="forward">
+      <ion-fab-button color="success" (click)="you()"  >
           <ion-icon name="logo-whatsapp"></ion-icon>
       </ion-fab-button>
   </ion-fab>

@@ -37,4 +37,9 @@ export class ServicioDetallePage implements OnInit {
       this.servicio = servicio;
     });
   }
+  you()
+  {
+    window.open('https://wa.me/593'+this.servicio.telefono, '_blank');
+    //window.open('https://www.messenger.com/t/alvaro.lopez.969', '_blank');
+  }
 }
