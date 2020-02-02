@@ -5,4 +5,5 @@ export interface ServiciosI {
     disponibilidad:string;
     telefono:string;
     idusuario:string;
+    Name:string;
 }

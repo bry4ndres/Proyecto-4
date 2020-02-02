@@ -22,6 +22,7 @@ export class AuthService {
   conectado = false;
   userId: string;
   perfilId: string;
+  displayN:string;
   constructor(
     public afDB: AngularFireDatabase,
     public afAuth: AngularFireAuth,
@@ -37,6 +38,7 @@ if (!auth) {
         console.log('UserId' + auth.uid);
         this.conectado = true;
         this.userId = auth.uid;
+        this.displayN=auth.displayName;
       }
     });
   }
