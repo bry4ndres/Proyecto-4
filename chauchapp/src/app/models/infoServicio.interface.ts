@@ -6,5 +6,4 @@ export interface ServiciosI {
     telefono:string;
     idusuario:string;
     Name:string;
-    fecha:string;
 }

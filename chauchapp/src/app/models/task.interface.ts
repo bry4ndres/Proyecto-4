@@ -9,5 +9,4 @@ export interface TaskI {
     telefono:string;
     idusuario:string;
     Name:string;
-    fecha:number;
 }

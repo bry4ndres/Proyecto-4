@@ -4,7 +4,6 @@ import { InfoServicioService } from '../../services/info-servicio.service';
 import { ActivatedRoute} from '@angular/router';
 import { NavController, LoadingController } from '@ionic/angular';
 import { PerfilService, perfiles } from '../../servicios/perfil.service';
-import { debug } from 'util';
 
 @Component({
   selector: 'app-servicio-detalle',
@@ -12,15 +11,14 @@ import { debug } from 'util';
   styleUrls: ['./servicio-detalle.page.scss'],
 })
 export class ServicioDetallePage implements OnInit {
-  today = Date.now();
+ 
   servicio: ServiciosI = {
     nombre: '',
     descripcion: '',
     disponibilidad: '',
     telefono: '',
     idusuario:'',
-    Name:'',
-    fecha:''
+    Name:''
 
   };
   servicioId= null;
@@ -42,7 +40,6 @@ export class ServicioDetallePage implements OnInit {
       loading.dismiss();;
       this.servicio = servicio;
     });
-    console.log(this.today);
   }
   you()
   {

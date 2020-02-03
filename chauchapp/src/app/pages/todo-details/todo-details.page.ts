@@ -12,15 +12,13 @@ import { PerfilService } from '../../servicios/perfil.service';
   styleUrls: ['./todo-details.page.scss'],
 })
 export class TodoDetailsPage implements OnInit {
-  today = Date.now();
   todo: TaskI = {
     nombre: '',
     descripcion: '',
     disponibilidad: '',
     telefono: '',
     idusuario:'',
-    Name:'',
-    fecha:0
+    Name:''
     /* priority: 0 */
   };
 
@@ -49,7 +47,6 @@ export class TodoDetailsPage implements OnInit {
   async saveTodo() {
     this.todo.idusuario=this.au.userId;
     this.todo.Name=this.au.displayN;
-    this.todo.fecha=this.today;
     //this.todo.Name=this.perf.displayN;
     console.log(this.au.displayN);
     const loading = await this.loadingController.create({
