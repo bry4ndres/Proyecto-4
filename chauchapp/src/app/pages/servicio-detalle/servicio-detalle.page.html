@@ -3,43 +3,117 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>Detalles Servicio</ion-title>
+    <ion-title>Detalle del Servicio</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content padding >
+<ion-content padding  >
   <ion-card *ngIf="servicio" color="light">
-    <ion-card-header>
-      <ion-card-subtitle>Bryan Gagñay</ion-card-subtitle>
+    <!-- <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-subtitle> {{servicio.fecha | date:'dd/MM/yyyy/ - HH:mm'}}</ion-card-subtitle>
       <ion-card-title text-center ><h1><b>{{servicio.nombre}} </b> </h1></ion-card-title>
-    </ion-card-header>
-    <ion-card-content >
-      <h1 ><b>Descripción:</b> </h1>
-      <ion-avatar class="avatar" slot="end" >
-        <img style="align-items: center" src="https://image.flaticon.com/icons/png/512/236/236835.png">
-      </ion-avatar>
-      <h2 text-center>{{servicio.descripcion}}</h2>
-      
-  </ion-card-content>
-  <ion-card-content>
-    <h1><b>Disponibilidad:</b> </h1>
-    <ion-avatar class="avatar" slot="end" >
-      <img style="align-items: center" src="https://pngimage.net/wp-content/uploads/2018/06/time-in-png-4.png">
-    </ion-avatar>
-    <h2 text-center>{{servicio.disponibilidad}}</h2>
+    </ion-card-header> -->
+
+    <ion-card>
+      <br>
+      <p *ngIf=" servicio.Name == 'Rodrigo Lazo'" > 
+        <ion-avatar class="ava">
+        <img src="https://scontent.fatf2-1.fna.fbcdn.net/v/t1.0-9/s960x960/76751703_2516805711728819_3657362521687326720_o.jpg?_nc_cat=106&_nc_ohc=4gT-0NtxG1EAX-1_JH3&_nc_ht=scontent.fatf2-1.fna&oh=3c5cb0cabd3be35e239086ed4024550a&oe=5ECAC80B" />
+        </ion-avatar>
+      </p>
+      <p *ngIf=" servicio.Name == 'Bryan Andres Gagñay Angamarca'; elseCondition" > 
+        <ion-avatar class="ava">
+        <img src="https://scontent.fatf2-1.fna.fbcdn.net/v/t1.0-1/p960x960/48977530_2137988939614305_1191068326093127680_o.jpg?_nc_cat=101&_nc_ohc=1G994wFwxzQAX940KqA&_nc_ht=scontent.fatf2-1.fna&_nc_tp=6&oh=7926298cacef091daf1e90f7e3bb47d6&oe=5EC80931" />
+        </ion-avatar>
+      </p>
+      <p *ngIf=" servicio.Name == 'Alex Moreano'; elseCondition" > 
+        <ion-avatar class="ava">
+        <img src="https://scontent.fatf2-1.fna.fbcdn.net/v/t1.0-1/c2.0.160.160a/p160x160/66831727_10211733789178799_3126716357329027072_n.jpg?_nc_cat=100&_nc_ohc=Gw3-70WWZUQAX_RAgo8&_nc_ht=scontent.fatf2-1.fna&oh=4e14822eb2d20963a41d8fad85023ee5&oe=5EC89576" />
+        </ion-avatar>
+      </p>
+
+      <!-- <ng-template #elseCondition>
+        <ion-avatar class="ava">
+          <img src="https://image.flaticon.com/icons/png/512/236/236835.png" />
+          </ion-avatar>
+      </ng-template>  --> 
+
+      <ion-card-header>
+        <ion-card-subtitle class="ion-text-center"> {{servicio.Name}}</ion-card-subtitle>
+        <ion-card-title class="ion-text-center"><h2><b>{{servicio.nombre}}</b></h2></ion-card-title>
+      </ion-card-header>
     
-  </ion-card-content>
-  <ion-card-content>
-    <h1><b>Contacto:</b> </h1>
-    <ion-avatar class="avatar" slot="end" >
-      <img style="align-items: center" src="https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg">
-    </ion-avatar>
-    <h2 text-center>{{servicio.telefono}}</h2>
-  </ion-card-content>
+      <ion-card-content>
+        <p>Ultima Modificacion :{{servicio.fecha | date:'dd/MM/yyyy/ - HH:mm'}} </p>
+      </ion-card-content>
+    </ion-card>
+    
+    
+
+    <ion-list-header>
+     <h4>Descripción:</h4> 
+    </ion-list-header>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://image.flaticon.com/icons/png/512/236/236835.png" />
+      </ion-avatar>
+      <h6>{{servicio.descripcion}}</h6>
+      
+    </ion-item>
+
+    <ion-list-header>
+      <h4>Disponibilidad:</h4> 
+     </ion-list-header>
+     <ion-item>
+       <ion-avatar slot="start">
+         <img src="https://pngimage.net/wp-content/uploads/2018/06/time-in-png-4.png" />
+       </ion-avatar>
+       <h6>{{servicio.disponibilidad}}</h6>
+       
+     </ion-item>
+
+     <ion-list-header>
+      <h4>Contacto:</h4> 
+     </ion-list-header>
+     
+     <ion-item>
+       <ion-avatar slot="start">
+         <img src="https://cdn5.vectorstock.com/i/1000x1000/82/59/anonymous-user-flat-icon-vector-18958259.jpg" />
+       </ion-avatar>
+       <ion-label>
+         <h2>{{servicio.telefono}}</h2>
+         <p>{{servicio.fecha | date:'dd/MM/yyyy/ - HH:mm'}}</p>
+       </ion-label>
+     </ion-item>
+
+     
+
   </ion-card>
+    <!-- fab placed to the bottom and start and on the bottom edge of the content overlapping footer with a list to the right -->
+    
   
-  <ion-fab vertical="bottom" horizontal="center" slot="fixed" color="success">
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="success">
+      <ion-fab-button>
+        <ion-icon name="arrow-dropup"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button color="success" (click)="you()"><ion-icon name="logo-whatsapp"></ion-icon></ion-fab-button>
+        <ion-fab-button color="primary" (click)="face()"><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="success">
       <ion-fab-button color="success" (click)="you()"  >
           <ion-icon name="logo-whatsapp"></ion-icon>
       </ion-fab-button>
-  </ion-fab>
+  </ion-fab> -->
 </ion-content>
+
+<style>
+.ava { 
+ margin: auto;
+    width: 170px;  
+    height: 170px;  
+    
+}
+</style>

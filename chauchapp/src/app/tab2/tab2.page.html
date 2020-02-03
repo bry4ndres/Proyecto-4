@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>
-      Servicios
+      Todos tus Servicios
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -16,13 +16,21 @@
       </div>
     </ng-container>
     <ion-item-sliding *ngFor="let todo of todos">
+     
       <ion-item *ngIf="todo.idusuario==cod " lines="inset" button [routerLink]="['/details', todo.id]">
+        
         <ion-label >
-          {{'- '}}
-          {{ todo.nombre }}
-        </ion-label>
-      </ion-item>
+          <ion-avatar slot="start">
+            <img src="https://image.flaticon.com/icons/svg/443/443138.svg" />
+            {{ todo.nombre }}
+          </ion-avatar>
  
+        </ion-label>
+      
+      </ion-item>
+    
+    
+
       <ion-item-options side="end">
         <ion-item-option (click)="remove(item)" color="secondary">
           Check
@@ -37,3 +45,10 @@
     </ion-fab-button>
   </ion-fab>
  </ion-content>
+
+ <style>
+ ion-avatar{
+  width: 17px;  
+    height: 17px;
+ }
+ </style>

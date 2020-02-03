@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ViewChildDecorator } from '@angular/core';
 import { AuthService } from '../servicios/auth.service';
 import { PerfilService, perfiles } from '../servicios/perfil.service';
+import {ServiciosI } from '../models/infoServicio.interface';
+import { InfoServicioService } from '../services/info-servicio.service';
 import { debug } from 'util';
 import { NavController } from '@ionic/angular';
 
@@ -14,6 +16,7 @@ import {Router} from '@angular/router';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page implements OnInit {
+  
 
   public infoPerfil: any = [];
   notes = {id: null, title: null, description: null};

@@ -8,4 +8,6 @@ export interface TaskI {
     disponibilidad:string;
     telefono:string;
     idusuario:string;
+    Name:string;
+    fecha:number;
 }

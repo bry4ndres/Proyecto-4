@@ -1,9 +1,13 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title text-center>
-      Buscar Trabajadores
+      Que Actividad Estas Buscando
     </ion-title>
+    
   </ion-toolbar>
+  
+  <ion-input padding placeholder="Buscar Actividad"  type="text"  [(ngModel)]="Bus"><ion-button (click)="Busqueda()"><ion-icon name="search"></ion-icon></ion-button></ion-input>
+
 </ion-header>
 <ion-content>
   <ion-list>
@@ -15,13 +19,42 @@
         </p>
       </div>
     </ng-container>
-    <ion-item-sliding *ngFor="let servicio of servicios">
-      <ion-item  lines="inset" button [routerLink]="['/detalle', servicio.id]">
-        <ion-label >
-          {{'- '}}
-          {{ servicio.nombre }}
-        </ion-label>
-      </ion-item>
+    <ion-item-sliding *ngFor="let servicio of servicios" >
+      <ion-card *ngIf="a=='' ; else condicion ; " size="auto" text-center lines="inset" button [routerLink]="['/detalle', servicio.id]">
+        <ion-card-content size="auto" >
+
+          <ion-item>
+            <ion-avatar slot="start">
+              <img src="https://i0.pngocean.com/files/348/800/890/computer-icons-avatar-user-login-avatar.jpg" />
+            </ion-avatar>
+            <ion-label>
+              <h2><b>{{ servicio.nombre }}</b></h2>
+              <h3>Nombre: {{servicio.Name}}</h3>
+              <p>{{servicio.fecha | date:'dd/MM/yyyy/ - HH:mm'}}</p>
+            </ion-label>
+          </ion-item>
+<!-- 
+          <ion-card-header>
+            <ion-card-title>
+              
+              <ion-label >
+                
+                <h1>{{ servicio.nombre }}</h1>
+                
+              </ion-label>
+            </ion-card-title>
+            
+          </ion-card-header>
+          
+          <ion-label >
+            Trabajador: {{servicio.Name}}
+            <br>
+            {{servicio.fecha | date:'dd/MM/yyyy'}}
+          </ion-label> -->
+
+
+        </ion-card-content>
+      </ion-card  >
  
       <ion-item-options side="end">
         <ion-item-option (click)="Remove(item)" color="secondary">
@@ -30,6 +63,33 @@
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
-  </ion-list>
+<!-- nuevoo  -->
+    
+<!-- otracosa -->
+    <ion-item-sliding #condicion *ngFor="let servicio of servicios" >
+      <ion-card *ngIf="servicio.nombre==a ; " size="auto" text-center lines="inset" button [routerLink]="['/detalle', servicio.id]">
+        <ion-card-content size="auto" >
+          <ion-item>
+            <ion-avatar slot="start">
+              <img src="https://i0.pngocean.com/files/348/800/890/computer-icons-avatar-user-login-avatar.jpg" />
+            </ion-avatar>
+            <ion-label>
+              <h2><b>{{ servicio.nombre }}</b></h2>
+              <h3>Nombre: {{servicio.Name}}</h3>
+              <p>{{servicio.fecha | date:'dd/MM/yyyy/ - HH:mm'}}</p>
+            </ion-label>
+          </ion-item>
+
+        </ion-card-content>
+        
+      </ion-card  >
  
+      
+    </ion-item-sliding>
+  </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let item of goalList">
+      <ion-label>{{ item.goalName }}</ion-label>
+    </ion-item>
+  </ion-list>
  </ion-content>

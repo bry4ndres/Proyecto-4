@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>Detalles</ion-title>
+    <ion-title>¿Qué actividad quieres publicar?</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
@@ -21,7 +21,7 @@
       <ion-input required type="number" placeholder="Telefono" [(ngModel)]="todo.telefono"></ion-input>
     </ion-item>
   </ion-list>
-  <ion-button expand="full" (click)="saveTodo()">Save</ion-button>
+  <ion-button expand="full" (click)="saveTodo()">Publicar</ion-button>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
       <ion-fab-button color="danger" (click)="onRemoveTodo(todoId)" routerLink="/tabs/tab2" routerDirection="forward">
           <ion-icon name="trash"></ion-icon>

@@ -20,7 +20,7 @@ export class TodoService {
 private todoCollection: AngularFirestoreCollection<TaskI>;
 private todos: Observable<TaskI[]>;
   constructor(db: AngularFirestore) { 
-    this.todoCollection = db.collection<TaskI>('service');
+    this.todoCollection = db.collection<TaskI>('service'); // de donde saco los datos 
     this.todos = this.todoCollection.snapshotChanges().pipe(map( actions =>{
       return actions.map(a=> {
       const data = a.payload.doc.data();
