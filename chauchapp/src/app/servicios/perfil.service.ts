@@ -15,7 +15,7 @@ export interface perfiles {
   providedIn: 'root'
 })
 export class PerfilService {
-  displayN:string;
+
   constructor( private ab: AngularFirestore, public afDB: AngularFireDatabase) { }
   perfiles = [];
   notes = [
@@ -30,11 +30,7 @@ export class PerfilService {
     return this.afDB.list('Usuarios/').snapshotChanges().pipe(map(info => {
        info.map(a => {
         const data: perfiles = a.payload.toJSON() as perfiles;
-        if(data.id=='D9rJaNrAQ4R8bNqyyOty8cYlB143')
-        {
-          console.log(data.displayName);
-          this.displayN=data.displayName;
-        }
+        console.log(data.displayName);
         return data;
       })
     }));

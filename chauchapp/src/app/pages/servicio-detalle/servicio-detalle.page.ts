@@ -3,7 +3,6 @@ import {ServiciosI } from '../../models/infoServicio.interface';
 import { InfoServicioService } from '../../services/info-servicio.service';
 import { ActivatedRoute} from '@angular/router';
 import { NavController, LoadingController } from '@ionic/angular';
-import { PerfilService, perfiles } from '../../servicios/perfil.service';
 
 @Component({
   selector: 'app-servicio-detalle',
@@ -11,15 +10,12 @@ import { PerfilService, perfiles } from '../../servicios/perfil.service';
   styleUrls: ['./servicio-detalle.page.scss'],
 })
 export class ServicioDetallePage implements OnInit {
- 
   servicio: ServiciosI = {
     nombre: '',
     descripcion: '',
     disponibilidad: '',
     telefono: '',
-    idusuario:'',
-    Name:''
-
+    idusuario:''
   };
   servicioId= null;
   constructor(private route: ActivatedRoute, private nav: NavController, private infoServicioService: InfoServicioService, private loadingController: LoadingController) { }
@@ -46,6 +42,4 @@ export class ServicioDetallePage implements OnInit {
     window.open('https://wa.me/593'+this.servicio.telefono, '_blank');
     //window.open('https://www.messenger.com/t/alvaro.lopez.969', '_blank');
   }
-
-  
 }
