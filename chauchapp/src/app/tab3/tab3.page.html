@@ -20,27 +20,25 @@
   <ion-list>
    <ion-input [(ngModel)]="notes.title" >
    </ion-input>
-   <ion-button (click)="irModificar(notes.id)">
-    <ion-icon name="settings"></ion-icon>
-   </ion-button>
+   
    
   </ion-list>
 
-  <ion-card>
+  <ion-card >
     <br>
       <ion-avatar class="ava">
-      <img src="https://scontent.fatf2-1.fna.fbcdn.net/v/t1.0-9/s960x960/76751703_2516805711728819_3657362521687326720_o.jpg?_nc_cat=106&_nc_ohc=4gT-0NtxG1EAX-1_JH3&_nc_ht=scontent.fatf2-1.fna&oh=3c5cb0cabd3be35e239086ed4024550a&oe=5ECAC80B" />
+      <img [src]="authService.photoURL"/>
       </ion-avatar>
 
     <ion-card-header>
-      <ion-card-subtitle class="ion-text-center"> Nombre..</ion-card-subtitle>
-      <ion-card-subtitle class="ion-text-center"> Correo..</ion-card-subtitle>
+      <ion-card-title class="ion-text-center"> Usuario</ion-card-title>
+      <ion-card-subtitle class="ion-text-center"> {{authService.displayN}}</ion-card-subtitle>
       
     </ion-card-header>
   
     <ion-card-content>
-      
-      <p>Ultima Modificacion: </p>
+      <ion-card-title class="ion-text-center"> Correo</ion-card-title>
+      <p class="ion-text-center"> {{authService.email}}</p>
     </ion-card-content>
   </ion-card>
   

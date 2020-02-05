@@ -17,7 +17,6 @@ import {Router} from '@angular/router';
 })
 export class Tab3Page implements OnInit {
   
-
   public infoPerfil: any = [];
   notes = {id: null, title: null, description: null};
   constructor(public authService: AuthService, public perfilService: PerfilService, public router: Router) {
@@ -45,6 +44,6 @@ ngOnInit() {
        this.infoPerfil = perfil;
        
          });
-
+         
   }
 }

@@ -22,7 +22,9 @@ export class AuthService {
   conectado = false;
   userId: string;
   perfilId: string;
-  displayN:string;
+  displayN: string;
+  photoURL: string;
+  email:string;
   constructor(
     public afDB: AngularFireDatabase,
     public afAuth: AngularFireAuth,
@@ -39,6 +41,8 @@ if (!auth) {
         this.conectado = true;
         this.userId = auth.uid;
         this.displayN=auth.displayName;
+        this.photoURL=auth.photoURL;
+        this.email=auth.email;
       }
     });
   }
@@ -86,6 +90,7 @@ facebookWeb() {
       });
       this.router.navigate(['../tabs/tab1']);
       this.perfilId = success.user.uid;
+      this.photoURL=success.user.photoURL;
     }).catch((error) => {
       console.log('Erreur: ' + JSON.stringify(error));
     } );

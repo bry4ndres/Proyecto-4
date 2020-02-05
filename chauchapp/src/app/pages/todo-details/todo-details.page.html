@@ -9,16 +9,20 @@
 <ion-content padding>
   <ion-list lines="full">
     <ion-item *ngIf="todo">
-      <ion-input required type="text" placeholder="Nombre de la actividad" [(ngModel)]="todo.nombre"></ion-input>
+      <ion-label position="floating">Nombre de la actividad</ion-label>
+      <ion-input required type="text"  [(ngModel)]="todo.nombre"></ion-input>
     </ion-item>
     <ion-item *ngIf="todo">
-      <ion-input required type="text" placeholder="Descríbelo" [(ngModel)]="todo.descripcion"></ion-input>
+      <ion-label position="floating">Descríbelo</ion-label>
+      <ion-input required type="text" [(ngModel)]="todo.descripcion"></ion-input>
     </ion-item>
     <ion-item *ngIf="todo">
-      <ion-input required type="text" placeholder="Tu disponibilidad" [(ngModel)]="todo.disponibilidad"></ion-input>
+      <ion-label position="floating">Tu disponibilidad</ion-label>
+      <ion-input required type="text"  [(ngModel)]="todo.disponibilidad"></ion-input>
     </ion-item>
     <ion-item *ngIf="todo">
-      <ion-input required type="number" placeholder="Telefono" [(ngModel)]="todo.telefono"></ion-input>
+      <ion-label position="floating">Número de Contacto</ion-label>
+      <ion-input required type="number"  [(ngModel)]="todo.telefono"></ion-input>
     </ion-item>
   </ion-list>
   <ion-button expand="full" (click)="saveTodo()">Publicar</ion-button>

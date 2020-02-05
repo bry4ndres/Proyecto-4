@@ -88,8 +88,9 @@ logout() {
 
 
 // Con servicios
-constructor(private authService: AuthService) {}
+constructor(private authService: AuthService, public router: Router) {}
 IniciarSesionfacebook() {
   this.authService.facebookLogin();
+  this.router.navigate(['../tabs/tab1']);
 }
 }
